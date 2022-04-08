@@ -1,7 +1,7 @@
 
 import styled from 'styled-components';
 
-export const MENU_WIDTH ='290px';
+export const MENU_WIDTH ='280px';
 export const HEADER_HEIGHT = '88px';
 
 export const Grid = styled.section`

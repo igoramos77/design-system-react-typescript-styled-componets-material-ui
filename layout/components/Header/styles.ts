@@ -3,10 +3,12 @@ import { MENU_WIDTH } from '../../layout-styles';
 
 export const Container = styled.header`
   position: relative;
-  grid-area: 1 / 1 / 2 / 3;
+  grid-area: 1 / 2 / 2 / 3;
   width: 100%; 
   height: auto; 
   background: ${props => props.theme.sidebar.background};
+  border-bottom: 1px solid ${props => props.theme.sidebar.dividerBg};
+  padding: 1rem;
 
   > main {
     display: flex;

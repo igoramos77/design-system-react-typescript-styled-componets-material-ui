@@ -1,46 +1,59 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 
 import Layout from '../src/layout';
 
-import { Container } from './styles';
+//import { Container } from './styles';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
-import Box from '@mui/material/Box';
+
+import { Container, Grid, Card, CardHeader, CardContent, Divider } from '@mui/material';
+import ModalCard from './components/ModalCard';
 
 function App() {
 
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const style = {
-    position: 'absolute' as 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 400,
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
-    boxShadow: 24,
-    p: 4,
-  };
-
   return (
-    <Layout>
-      <Container>
-        <Button onClick={handleOpen}>Open modal</Button>
-        <Modal
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-        >
-          <Box sx={style}>
-            <h1>dsadasda</h1>
-          </Box>
-        </Modal>
-      </Container>
-    </Layout>
+    <>
+      <Layout>
+        <Container maxWidth="lg">
+          <Grid
+            container
+            direction="row"
+            justifyContent="center"
+            alignItems="stretch"
+            spacing={3}
+          >
+            <Grid item xs={12}>
+              <Card>
+                <CardHeader title="Dashboard" />
+                <Divider />
+                <CardContent>
+                  <h1>Modal Example</h1>
+                  <br />
+                  <Button variant="outlined" onClick={handleOpen}>
+                    Open modal
+                  </Button>
+                </CardContent>
+              </Card>
+            </Grid>
+          </Grid>
+        </Container>
+      </Layout>
+
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <ModalCard size="md">
+          <h1>dsadasda</h1>
+        </ModalCard>
+      </Modal>
+    </>
   );
 }
 

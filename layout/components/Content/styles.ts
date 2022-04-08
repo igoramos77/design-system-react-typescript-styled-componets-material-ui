@@ -7,6 +7,4 @@ export const Container = styled.div`
   height: 100%;
   padding: 1rem;
   background: ${props => props.theme.palette.background.default};
-  border-top: 1px solid #adafca20;
-  border-left: 1px solid #adafca20;
 `;

@@ -4,15 +4,11 @@ import { MENU_WIDTH } from '../../layout-styles';
 
 export const Container = styled.aside`
   position: relative;
-  grid-area: 2 / 1 / 2 / 1;
+  grid-area: 1 / 1 / 3 / 1;
   width: ${MENU_WIDTH}; 
   height: auto; 
   background: ${props => props.theme.sidebar.background};
-
-  .menu-icons {
-    width: 28px;
-    height: 28px;
-  }
+  border-right: 1px solid ${props => props.theme.sidebar.dividerBg};
 
   > main {
     padding: 1rem;
